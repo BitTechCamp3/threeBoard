@@ -1,2 +1,18 @@
 server:
     port: 8084
+
+spring:
+  r2dbc:
+    url: r2dbc:mysql://127.0.0.1:3306/board?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asi
+    username: root
+    password: root
+    pool:
+      max-size: 100
+      validation-query: SELECT 1
+
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        r2dbc:DEBUG
