@@ -2,6 +2,7 @@ package com.team.three.board.domain;
 
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -13,11 +14,13 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 public class Reply {
+
+    @Id
     private Integer index;
 
     private Integer boardid; //게시글 아이디
 
-    private Integer userid; //작성자
+    private String userid; //작성자
 
     private String replycontent; //댓글 내용
 

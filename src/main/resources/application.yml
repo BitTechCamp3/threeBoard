@@ -3,7 +3,7 @@ server:
 
 spring:
   r2dbc:
-    url: r2dbc:mysql://127.0.0.1:3306/board?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asi
+    url: r2dbc:mysql://127.0.0.1:3306/board?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia
     username: root
     password: root
     pool:

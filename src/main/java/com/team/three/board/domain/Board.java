@@ -16,6 +16,7 @@ public class Board {
     @Id
     private Integer index;
     private String title;
+
     private String contents;
     private Integer conlike;
     private Integer condislike;
