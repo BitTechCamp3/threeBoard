@@ -1,6 +1,7 @@
 package com.team.three.board.handler;
 
 import com.team.three.board.domain.Board;
+import com.team.three.board.domain.Count;
 import com.team.three.board.domain.Reply;
 import com.team.three.board.repository.BoardRepository;
 import com.team.three.board.service.BoardService;
@@ -52,6 +53,15 @@ public class BoardHandler {
         return ServerResponse.ok()
                 .contentType(APPLICATION_JSON)
                 .body(map, Board.class).log();
+    }
+
+    public Mono<ServerResponse> getCount(ServerRequest req) {
+        Mono<Count> mono = req.bodyToMono(Board.class)
+                .flatMap(arti -> boardService.getCount()).log();
+
+        return ServerResponse.ok()
+                .contentType(APPLICATION_JSON)
+                .body(mono, Count.class).log("countBoard is : ");
     }
 
     public Mono<ServerResponse> writeBoard(ServerRequest request) {

@@ -2,6 +2,7 @@ package com.team.three.board.service;
 
 import com.team.three.board.domain.Article;
 import com.team.three.board.domain.Board;
+import com.team.three.board.domain.Count;
 import com.team.three.board.domain.Reply;
 import com.team.three.board.repository.BoardRepository;
 import com.team.three.board.repository.ReplyRepository;
@@ -67,6 +68,12 @@ public class BoardServiceImpl implements BoardService {
     public Mono<Board> getArticle(Integer boardid) {
         Mono<Board> bd = boardRepository.findById(boardid);
         return bd;
-
     }
+
+    @Override
+    public Mono<Count> getCount() {
+        return boardRepository.countAllByTypeAndUseyn().log();
+    }
+
+
 }

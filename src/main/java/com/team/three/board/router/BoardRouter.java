@@ -24,6 +24,7 @@ public class BoardRouter {
                 .andRoute(GET("/boards/community").and(accept(MediaType.APPLICATION_JSON)), handler::getBoardCommunityList)
                 .andRoute(GET("/boards/qna").and(accept(MediaType.APPLICATION_JSON)), handler::getBoardQnAList)
                 .andRoute(GET("/board/id/{id}").and(accept(MediaType.APPLICATION_JSON)), handler::getArticle)
+                .andRoute(GET("/board/count/community").and(accept(MediaType.APPLICATION_JSON)), handler::getCount)
                 ;
     }
 }

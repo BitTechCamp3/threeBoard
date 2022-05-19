@@ -3,12 +3,21 @@ server:
 
 spring:
   r2dbc:
-    url: r2dbc:mysql://127.0.0.1:3306/board?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia
-    username: root
-    password: root
+    url: r2dbc:mysql://13.125.131.1:3306/board?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia&allowPublicKeyRetrieval=true
+    username: teamthree
+    password: conThree123*
     pool:
       max-size: 100
       validation-query: SELECT 1
+
+#spring:
+#  r2dbc:
+#    url: r2dbc:mysql://127.0.0.1:3306/board?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia
+#    username: root
+#    password: root
+#    pool:
+#      max-size: 100
+#      validation-query: SELECT 1
 
 
 #logging:
